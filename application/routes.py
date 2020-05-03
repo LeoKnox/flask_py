@@ -12,9 +12,9 @@ def rooms():
                 {"roomID":"0001","roomName":"Sentry","length":8,"width":6}]
     return render_template("rooms.html", active_rooms ="active", roomData = roomData)
 
-@app.route("/edit_room")
+@app.route("/edit_room", methods=["GET","POST"])
 def edit_room():
-    id = request.args.get('roomID')
+    id = request.form['roomID']
     return render_template("edit_room.html", id = id)
 
 @app.route("/register")
