@@ -1,5 +1,5 @@
 from application import app
-from flask import render_template
+from flask import render_template, request
 
 @app.route("/")
 @app.route("/index")
@@ -14,7 +14,8 @@ def rooms():
 
 @app.route("/edit_room")
 def edit_room():
-    return render_template("edit_room.html")
+    id = request.args.get('roomID')
+    return render_template("edit_room.html", id = id)
 
 @app.route("/register")
 def register():
