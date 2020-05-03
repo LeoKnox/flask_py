@@ -4,11 +4,12 @@ from flask import render_template
 @app.route("/")
 @app.route("/index")
 def index():
-     return render_template("index.html")
+     return render_template("index.html", active_index = "active")
 
 @app.route("/rooms")
 def rooms():
-     return render_template("rooms.html")
+    roomData = [{"RoomID":"0000","RoomName":"Entry","Length":5,"Width":5}]
+    return render_template("rooms.html", active_rooms ="active", roomData = roomData)
 
 @app.route("/register")
 def register():

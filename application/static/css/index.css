@@ -17,7 +17,7 @@ body {
 
 .nav-li a {
     display: block;
-    color: white;
+    color: beige;
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
@@ -25,6 +25,24 @@ body {
 
 .nav-li a:hover {
     background-color: #0f0d5e;
+}
+
+#room_table {
+    width: 50%;
+    border: 1px solid black;
+    margin: 15px;
+    border-collapse: collapse;
+}
+
+#room_table td, th {
+    border: 1px solid black;
+}
+
+#room_table th {
+    text-align: left;
+    padding: 8px 4px;
+    background-color: goldenrod;
+    color: beige;
 }
 
 .active {
