@@ -7,13 +7,20 @@
         <th>Room Name</th>
         <th>Length</th>
         <th>Width</th>
+        <th>Edit Room</th>
     </tr>
     {% for data in roomData %}
     <tr>
-        <td>{{ data.RoomID }}</td>
-        <td>{{ data.RoomName }}</td>
-        <td>{{ data.Length }}</td>
-        <td>{{ data.Width }}</td>
+        <td>{{ data.roomID }}</td>
+        <td>{{ data.roomName }}</td>
+        <td>{{ data.length }}</td>
+        <td>{{ data.width }}</td>
+        <td>
+            <form action="{{ url_for('edit_room')}}" method="GET">
+                <input type="hidden" name="roomID" value="{{data['roomID']}}">
+                <button class="room_button">Edit</button>
+            </form>
+        </td>
     </tr>
     {% endfor %}
 </table>

@@ -8,8 +8,13 @@ def index():
 
 @app.route("/rooms")
 def rooms():
-    roomData = [{"RoomID":"0000","RoomName":"Entry","Length":5,"Width":5}]
+    roomData = [{"roomID":"0000","roomName":"Entry","length":5,"width":5},
+                {"roomID":"0001","roomName":"Sentry","length":8,"width":6}]
     return render_template("rooms.html", active_rooms ="active", roomData = roomData)
+
+@app.route("/edit_room")
+def edit_room():
+    return render_template("edit_room.html")
 
 @app.route("/register")
 def register():
