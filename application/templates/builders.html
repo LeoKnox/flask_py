@@ -1,0 +1,13 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>List of Builders</h1>
+    {% for builder in builders %}
+        <dl>
+            <dt>Builder ID: {{ builder.builder_id }}</dt>
+            <dd>Email: {{ builder.email }}</dd>
+            <dd>Password: {{ builder.password }}</dd>
+        </dl>
+    {% endfor %}
+{% endblock %}
