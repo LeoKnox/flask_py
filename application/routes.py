@@ -1,5 +1,6 @@
 from application import app, db
 from flask import render_template, request
+from application.models import Builder, Room, Dungeon
 
 @app.route("/")
 @app.route("/index")
@@ -24,13 +25,6 @@ def register():
 @app.route("/login")
 def login():
     return render_template("login.html")
-
-class Builder(db.Document):
-    builder_id  =   db.IntField( unique=True )
-    first_name  =   db.StringField( max_length=50 )
-    last_name   =   db.StringField( max_length=50 )
-    email       =   db.StringField( max_length=30 )
-    password    =   db.StringField( max_length=30 )
 
 @app.route("/builder")
 def builder():
