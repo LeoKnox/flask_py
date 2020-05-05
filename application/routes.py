@@ -28,6 +28,10 @@ def login():
     form = BuilderForm()
     return render_template("login.html", form=form, login="active")
 
+@app.route("/about")
+def about():
+    return render_template("about.html", about="active")
+
 @app.route("/builder")
 def builder():
     #Builder(builder_id=1, first_name="Kiki", last_name="Killer", email="kikikiller@dungeon.com", password="kiki1234").save()

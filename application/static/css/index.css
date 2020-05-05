@@ -27,6 +27,11 @@ body {
     background-color: #0f0d5e;
 }
 
+footer {
+    background-color: #555555;
+    padding: 10px;
+}
+
 #room_table {
     width: 50%;
     border: 1px solid black;
@@ -58,10 +63,22 @@ body {
     height: 100%;
 }
 
+fieldset {
+    border: 3px darkblue solid;
+    border-radius: 8px;
+    background-color: goldenrod;
+}
+
 .login_fieldset {
-    border: 1px black solid;
+    border: 1px darkblue solid;
     padding: 5px 8px;
     margin-top: 10px;
+    background-color: beige;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.about_p {
+    width: 50%;
 }
 
 .active {
