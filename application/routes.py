@@ -26,7 +26,7 @@ def register():
 @app.route("/login", methods=['GET','POST'])
 def login():
     form = BuilderForm()
-    return render_template("login.html", form=form)
+    return render_template("login.html", form=form, login="active")
 
 @app.route("/builder")
 def builder():
