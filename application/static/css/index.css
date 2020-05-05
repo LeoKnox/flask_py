@@ -58,6 +58,12 @@ body {
     height: 100%;
 }
 
+.login_fieldset {
+    border: 1px black solid;
+    padding: 5px 8px;
+    margin-top: 10px;
+}
+
 .active {
     background-color: goldenrod;
 }

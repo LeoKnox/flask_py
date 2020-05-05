@@ -1,18 +1,21 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<form name="login" action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.email.label }}<br>
-        {{ form.email(size=35)}}
-    </p>
-    <p>
-        {{ form.password.label }}<br>
-        {{ form.password(size=35)}}
-    </p>
-    <p>
-        {{form.submit()}}
-    </p>
-</form>
+<fieldset>
+    <legend class="login_fieldset">Login</legend>
+    <form name="login" action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=35)}}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=35)}}
+        </p>
+        <p>
+            {{form.submit()}}
+        </p>
+    </form>
+</fieldset>
 {% endblock %}
