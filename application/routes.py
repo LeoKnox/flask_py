@@ -1,6 +1,7 @@
 from application import app, db
 from flask import render_template, request
 from application.models import Builder, Room, Dungeon
+from application.forms import BuilderForm, RegisterForm
 
 @app.route("/")
 @app.route("/index")
@@ -22,9 +23,10 @@ def edit_room():
 def register():
     return render_template("register.html")
 
-@app.route("/login")
+@app.route("/login", methods=['GET','POST'])
 def login():
-    return render_template("login.html")
+    form = BuilderForm()
+    return render_template("login.html", form=form)
 
 @app.route("/builder")
 def builder():
