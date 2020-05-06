@@ -48,6 +48,17 @@ footer {
     padding: 8px;
 }
 
+.form_submit {
+    background-color: #555555;
+    color: beige;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.form_submit:hover {
+    background-color: #0f0d5e;
+}
+
 #room_table {
     width: 50%;
     border: 1px solid black;
