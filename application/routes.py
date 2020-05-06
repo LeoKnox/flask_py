@@ -21,7 +21,8 @@ def edit_room():
 
 @app.route("/register")
 def register():
-    return render_template("register.html")
+    form = RegisterForm()
+    return render_template("register.html", form=form)
 
 @app.route("/login", methods=['GET','POST'])
 def login():
