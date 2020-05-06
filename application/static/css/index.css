@@ -37,11 +37,15 @@ footer {
 }
 
 .negative {
-    background-color: red;
+    color: darkred;
+    background-color: lightcoral;
+    padding: 8px;
 }
 
 .positive {
     color: green;
+    background-color: lightgreen;
+    padding: 8px;
 }
 
 #room_table {
