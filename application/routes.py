@@ -1,5 +1,5 @@
 from application import app, db
-from flask import render_template, request
+from flask import render_template, request, redirect, flash
 from application.models import Builder, Room, Dungeon
 from application.forms import BuilderForm, RegisterForm
 
@@ -26,6 +26,12 @@ def register():
 @app.route("/login", methods=['GET','POST'])
 def login():
     form = BuilderForm()
+    if form.validate_on_submit():
+        if request.form.get("email") == "kikikiller@dungeon.com":
+            flash("You are logged in.", "positive")
+            return redirect("/index")
+        else:
+            flash("Sorry, please try again or register.", "negative")
     return render_template("login.html", form=form, login="active")
 
 @app.route("/about")

@@ -32,6 +32,14 @@ footer {
     padding: 10px;
 }
 
+.negative p {
+    background-color: red;
+}
+
+.positive {
+    color: green;
+}
+
 #room_table {
     width: 50%;
     border: 1px solid black;
