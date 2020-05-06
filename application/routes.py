@@ -27,8 +27,12 @@ def register():
 def login():
     form = BuilderForm()
     if form.validate_on_submit():
-        if request.form.get("email") == "kikikiller@dungeon.com":
-            flash("You are logged in.", "positive")
+        email = form.email.data
+        password = form.password.data
+
+        builder = Builder.objects(email=email).first()
+        if builder and password == builder.password:
+            flash(f"{builder.first_name}, You are logged in.", "positive")
             return redirect("/index")
         else:
             flash("Sorry, please try again or register.", "negative")
