@@ -49,14 +49,19 @@ footer {
 }
 
 .form_submit {
-    background-color: #555555;
+    background-color: darkblue;
     color: beige;
     font-weight: bold;
     padding: 4px;
 }
 
 .form_submit:hover {
-    background-color: #0f0d5e;
+    background-color: #555555;
+}
+
+.about {
+    background-color: goldenrod;
+    padding: 4px 12px;
 }
 
 #room_table {
