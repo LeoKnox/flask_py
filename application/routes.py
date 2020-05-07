@@ -18,8 +18,19 @@ def rooms():
 
 @app.route("/edit_room", methods=["GET","POST"])
 def edit_room():
-    id = request.form['roomID']
-    return render_template("edit_room.html", id = id)
+    roomID = request.form.get('roomID')
+    roomName = request.form.get('roomName')
+    length = request.form.get('length')
+    width = request.form.get('width')
+    if roomID:
+        if Dungeon.objects(builder_id=builder_id,roomID=roomID):
+            flash(f"Already added room {roomName}", "negative")
+            return redirect(url_for("rooms"))
+        else:
+            Dungeon(builder_id=builder_id,roomID=roomID)
+            flash(f'Room added in {roomName}', "positive")
+
+    return render_template("edit_room.html", roomID = roomID)
 
 @app.route("/register", methods=['POST', 'GET'])
 def register():

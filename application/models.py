@@ -24,4 +24,4 @@ class Room(db.Document):
 
 class Dungeon(db.Document):
     builder_id  =   db.IntField()
-    room_id     =   db.StringField( max_length=10 )
+    roomID      =   db.StringField( max_length=10 )
