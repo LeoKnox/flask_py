@@ -10,8 +10,10 @@ def index():
 
 @app.route("/rooms")
 def rooms():
-    roomData = [{"roomID":"0000","roomName":"Entry","length":5,"width":5},
-                {"roomID":"0001","roomName":"Sentry","length":8,"width":6}]
+    #roomData = [{"roomID":"0000","roomName":"Entry","length":5,"width":5},
+    #            {"roomID":"0001","roomName":"Sentry","length":8,"width":6}]
+    roomData = Room.objects.order_by("+roomID")
+    print (roomData)
     return render_template("rooms.html", active_rooms ="active", roomData = roomData)
 
 @app.route("/edit_room", methods=["GET","POST"])
@@ -33,7 +35,6 @@ def register():
 
         builder = Builder(builder_id=builder_id,email=email,first_name=first_name,last_name=last_name)
         builder.set_password(password)
-        print(builder.password)
         builder.save()
         flash('Successfully created', 'positive')
         return redirect(url_for('index'))

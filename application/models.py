@@ -16,8 +16,8 @@ class Builder(db.Document):
         return check_password_hash(self.password, password)
 
 class Room(db.Document):
-    room_id     =   db.StringField( max_length=10, unique=True )
-    title       =   db.StringField( max_length=50 )
+    roomID      =   db.StringField( max_length=10, unique=True )
+    roomName    =   db.StringField( max_length=50 )
     floor       =   db.StringField( max_length=50 )
     length      =   db.IntField()
     width       =   db.IntField()
