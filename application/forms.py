@@ -20,4 +20,4 @@ class RegisterForm(FlaskForm):
     def validate_email(self,email):
         builder = Builder.objects(email=email.data).first()
         if builder:
-            raise ValidationError("Emailin use pick another.")
+            raise ValidationError("Email in use pick another.")

@@ -31,9 +31,9 @@ def register():
         first_name  = form.first_name.data
         last_name   = form.last_name.data
 
-        builder = Builder(builder_id=builder_id,email=email,first_name=first_name,last_name=last_name,password=password)
-        #builder.set_password(password)
-        #print(builder.password)
+        builder = Builder(builder_id=builder_id,email=email,first_name=first_name,last_name=last_name)
+        builder.set_password(password)
+        print(builder.password)
         builder.save()
         flash('Successfully created', 'positive')
         return redirect(url_for('index'))
@@ -47,7 +47,8 @@ def login():
         password = form.password.data
 
         builder = Builder.objects(email=email).first()
-        if builder and builder.get_password(password) == builder.password:
+        print(builder.get_password(password))
+        if builder and builder.get_password(password):
             flash(f"{builder.first_name}, You are logged in.", "positive")
             return redirect("/index")
         else:
