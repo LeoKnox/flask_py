@@ -22,6 +22,7 @@ def edit_room():
     roomName = request.form.get('roomName')
     length = request.form.get('length')
     width = request.form.get('width')
+    builder_id=1
     if roomID:
         if Dungeon.objects(builder_id=builder_id,roomID=roomID):
             flash(f"Already added room {roomName}", "negative")
