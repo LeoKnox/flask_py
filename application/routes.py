@@ -1,5 +1,5 @@
 from application import app, db
-from flask import render_template, request, redirect, flash
+from flask import render_template, request, redirect, flash, url_for
 from application.models import Builder, Room, Dungeon
 from application.forms import BuilderForm, RegisterForm
 
@@ -19,9 +19,24 @@ def edit_room():
     id = request.form['roomID']
     return render_template("edit_room.html", id = id)
 
-@app.route("/register")
+@app.route("/register", methods=['POST', 'GET'])
 def register():
     form = RegisterForm()
+    if form.validate_on_submit():
+        builder_id  =   Builder.objects.count()
+        builder_id  += 1
+
+        email       = form.email.data
+        password    = form.password.data
+        first_name  = form.first_name.data
+        last_name   = form.last_name.data
+
+        builder = Builder(builder_id=builder_id,email=email,first_name=first_name,last_name=last_name,password=password)
+        #builder.set_password(password)
+        #print(builder.password)
+        builder.save()
+        flash('Successfully created', 'positive')
+        return redirect(url_for('index'))
     return render_template("register.html", form=form)
 
 @app.route("/login", methods=['GET','POST'])
@@ -32,7 +47,7 @@ def login():
         password = form.password.data
 
         builder = Builder.objects(email=email).first()
-        if builder and password == builder.password:
+        if builder and builder.get_password(password) == builder.password:
             flash(f"{builder.first_name}, You are logged in.", "positive")
             return redirect("/index")
         else:
