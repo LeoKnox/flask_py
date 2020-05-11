@@ -3,6 +3,12 @@
 {% block content %}
     <h1>Display room here</h1>
     <ul>
-        <li>{{roomData.roomName}}</li>
+        <li>Room Name: {{roomData.roomName}}</li>
+        <li>Floor Type: {{roomData.floor}}</li>
+        <li>Length: {{roomData.length}}</li>
+        <li>Width: {{roomData.width}}</li>
     </ul>
+    {% for i in range(roomData.length) %}
+        <p>{{i}}</p>
+    {% endfor %}
 {% endblock %}
