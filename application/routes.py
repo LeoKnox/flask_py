@@ -68,6 +68,10 @@ def login():
             flash("Sorry, please try again or register.", "negative")
     return render_template("login.html", form=form, login="active")
 
+@app.route("/show_room"):
+def show_room():
+    return render_template("show_room.html")
+
 @app.route("/about")
 def about():
     return render_template("about.html", about="active")
