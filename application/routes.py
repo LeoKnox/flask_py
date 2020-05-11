@@ -70,9 +70,8 @@ def login():
 
 @app.route("/show_room")
 def show_room():
-    roomData = Room.objects(roomID = "0000")
-    print (roomData)
-    return render_template("show_room.html")
+    roomData = Room.objects(roomID = "0000").first()
+    return render_template("show_room.html", roomData=roomData)
 
 @app.route("/about")
 def about():
