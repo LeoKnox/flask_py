@@ -9,6 +9,9 @@
         <li>Width: {{roomData.width}}</li>
     </ul>
     {% for i in range(roomData.length) %}
-        <p>{{i}}</p>
+        {% for j in range(roomData.width) %}
+            <label>{{j}}</label>
+        {% endfor %}
+        <p></p>
     {% endfor %}
 {% endblock %}
