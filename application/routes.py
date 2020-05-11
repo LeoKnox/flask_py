@@ -68,8 +68,10 @@ def login():
             flash("Sorry, please try again or register.", "negative")
     return render_template("login.html", form=form, login="active")
 
-@app.route("/show_room"):
+@app.route("/show_room")
 def show_room():
+    roomData = Room.objects(roomID = "0000")
+    print (roomData)
     return render_template("show_room.html")
 
 @app.route("/about")
