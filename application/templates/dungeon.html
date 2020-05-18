@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Dungeon Page</h1>
+<div class="dungeon_map">
+    <h3>Map</h3>
+{% for i in range(40) %}
+    {% for j in range(100) %}
+    .
+    {% endfor %}
+    <br>
+{% endfor %}
+</div>
+<div class="dungeon_info">
+    <h3>Info</h3>
+    <div class="info">
+    {% for item in info %}
+        {% for key, value in item.items() %}
+            <p>{{ key.capitalize() }}:
+            <label>{{ value }}</label>
+            </p>
+        {% endfor %}
+        <a class="room_edit" href="{{url_for('room')}}{{item.room_name}}">Edit</a>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

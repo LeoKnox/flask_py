@@ -1,11 +1,10 @@
-<nav>
-    <ul class = "nav-ul">
-            <li class="nav-li"><a class="{{ active_index }}" href="{{ url_for('index') }}">Index</a></li>
-            <li class="nav-li"><a class="{{ active_rooms }}" href="{{ url_for('rooms') }}">Rooms</a></li>
-            <li class="nav-li"><a class="{{ login }}" href="{{ url_for('login') }}">Login</a></li>
-            <li class="nav-li"><a class="" href="{{ url_for('register') }}">Register</a></li>
-            <li class="nav-li"><a class="{{ about }}" href="{{ url_for('about') }}">About</a></li>
-        </fieldset>
+<header>
+    <ul class="nav_ul">
+        <li class="nav_li"><a class="{{ index }}" href="{{ url_for('index') }}">Home</a></li>
+        <li class="nav_li"><a class="{{ dungeon}}" href="{{ url_for('dungeon') }}">Dungeon</a></li>
+        <li class="nav_li"><a class="{{ room }}" href="{{ url_for('room') }}">Room</a></li>
+        <li class="nav_li"><a class="{{ map }}" href="{{ url_for('map') }}">Map</a></li>
+        <li class="nav_li"><a class="{{ monsters }}" href="{{ url_for('monsters') }}">Monsters</a></li>
+        <li class="nav_li"><a class="{{treasure }}" href="{{ url_for('treasure') }}">Treasure</a></li>
     </ul>
-</nav>
-<h1>{{ title }}</h1>
+</header>

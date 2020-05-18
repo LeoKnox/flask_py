@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Room Page</h1>
+<p>Room Name: {{info.room_name}}</p>
+<form>
+    <p>Room Name:<form>{{info.room_name}}</form></p>
+    <p>Length:<form>{{info.length}}</form></p>
+    <p>Width:<form>{{info.width}}</form></p>
+<button>Edit</button>
+</form>
+<br>
+_
+{%- for x in range(info.width) -%}
+    _
+{%- endfor -%}
+<br>
+{%- for i in range(info.width) -%}
+    |
+    {%- for j in range(info.length) %}
+        <label>.</label>
+    {% endfor -%}
+    |
+    <br>
+{%- endfor -%}
+_
+{%- for x in range(info.width) -%}
+_
+{%- endfor -%}
+<br>
+{% endblock %}

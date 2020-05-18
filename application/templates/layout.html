@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Adventure</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-    {% include "includes/nav.html" %}
+{% include "includes/nav.html" %}
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="{{ category }}">
-                    <p>{{ message }}</p>
-                </div>
-            {% endfor %}
-            {% endif %}
-    {% endwith %}
+{% block content %}
+{% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
-</body>
 {% include "includes/footer.html" %}
+</body>
 </html>
