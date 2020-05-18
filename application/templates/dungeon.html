@@ -4,12 +4,14 @@
 <h1>Dungeon Page</h1>
 <div class="dungeon_map">
     <h3>Map</h3>
+    <div class="dots">
 {% for i in range(40) %}
     {% for j in range(100) %}
     .
     {% endfor %}
     <br>
 {% endfor %}
+    </div>
 </div>
 <div class="dungeon_info">
     <h3>Info</h3>
@@ -22,6 +24,14 @@
         {% endfor %}
         <a class="room_edit" href="{{url_for('room')}}{{item.room_name}}">Edit</a>
     {% endfor %}
+    <br>
+    <br>
+    <button>Update</button>
     </div>
 </div>
 {% endblock %}
+<script>
+    function myFunction() {
+        var x = document.getElementByClass("dots").textContent;
+    }
+</script>
