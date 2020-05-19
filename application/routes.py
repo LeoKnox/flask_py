@@ -14,12 +14,13 @@ def dungeon():
     return render_template("dungeon.html", dungeon="active", info=info)
 
 @app.route("/room/")
-@app.route("/room/<room_name>")
+@app.route("/room/<room_name>", methods=["GET", "POST"])
 def room(room_name="Entry"):
     if not room_name:
         room_name="Entry"
+    form = CreateRoomForm()
     room_data = Room.objects.get(room_name=room_name)
-    return render_template("room.html", room="active", info=room_data)
+    return render_template("room.html", room="active", info=room_data, form=form)
 
 @app.route("/map")
 def map():
