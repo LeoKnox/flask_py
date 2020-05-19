@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Dungeon Page</h1>
+<h1 id="pi">Dungeon Page</h1>
 <div class="dungeon_map">
     <h3>Map</h3>
     <div class="dots">
@@ -26,12 +26,7 @@
     {% endfor %}
     <br>
     <br>
-    <button>Update</button>
+    <button onclick="myFunction()">Update</button>
     </div>
 </div>
 {% endblock %}
-<script>
-    function myFunction() {
-        var x = document.getElementByClass("dots").textContent;
-    }
-</script>
