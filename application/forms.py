@@ -1,23 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField
-from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationError
-from application.models import Builder
+from wtforms import StringField, SubmitField, IntegerField
+from wtforms.validators import DataRequired, ValidationError
 
-class BuilderForm(FlaskForm):
-    email       =   StringField("Email", validators=[DataRequired()])
-    password    =   StringField("Password", validators=[DataRequired(), Length(min=6,max=15)])
-    remember_me =   BooleanField("Remember Me")
-    submit      =   SubmitField("Login")
-
-class RegisterForm(FlaskForm):
-    email       =   StringField("Email", validators=[DataRequired()])
-    password    =   StringField("Password", validators=[DataRequired(),Length(min=6,max=15)])
-    password_confirm    =   StringField("Password", validators=[DataRequired(),Length(min=6,max=15), EqualTo('password')])
-    first_name  =   StringField("First Name", validators=[DataRequired(),Length(min=2,max=55)])
-    last_name   =   StringField("Last Name", validators=[DataRequired(),Length(min=2,max=55)])
-    submit      =   SubmitField("Register Now")
-
-    def validate_email(self,email):
-        builder = Builder.objects(email=email.data).first()
-        if builder:
-            raise ValidationError("Email in use pick another.")
+class CreateRoomForm(FlaskForm):
+    room_name   =   StringField("Room Name", validator=[DataRequired()])
+    length      =   IntegerField("Length", validator=[DataRequired()])
+    width       =   IntegerField("Width", validator=[DataRequired()])
+    pos_x       =   IntegerField("X Position", validator=[DataRequired()])
+    pos_y       =   IntegerField("Y Position", validator=[DataRequired()])
