@@ -16,11 +16,7 @@ def index():
 
 @app.route("/dungeon")
 def dungeon():
-    info = [
-        {"room_name":"Entry","length":5,"width":5},
-        {"room_name":"Storage","length":9,"width":7},
-        {"room_name":"Insanity","length":8,"width":12}
-    ]
+    info = Room.objects.all()
     return render_template("dungeon.html", dungeon="active", info=info)
 
 @app.route("/room/")

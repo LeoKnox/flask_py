@@ -17,10 +17,8 @@
     <h3>Info</h3>
     <div class="info">
     {% for item in info %}
-        {% for key, value in item.items() %}
-            <p>{{ key.capitalize() }}:
-            <label>{{ value }}</label>
-            </p>
+        {% for i in item %}
+            <p>{{i}} : {{item[i] }}</p>
         {% endfor %}
         <a class="room_edit" href="{{url_for('room')}}{{item.room_name}}">Edit</a>
     {% endfor %}
