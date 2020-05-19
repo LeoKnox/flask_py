@@ -1,4 +1,5 @@
 from application import app, db
+from application.models import Room
 from flask import render_template
 
 class Room(db.Document):
