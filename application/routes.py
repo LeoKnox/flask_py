@@ -1,7 +1,7 @@
-from application import app, db
+from application import app, db, mycol
 from application.models import Room
 from application.forms import CreateRoomForm
-from flask import render_template
+from flask import render_template, request
 
 @app.route("/")
 @app.route("/index")
@@ -27,13 +27,16 @@ def room(room_name="Entry"):
         width       =   form.width.data
         pos_x       =   form.pos_x.data
         pos_y       =   form.pos_y.data
-    
         room = Room(room_name=room_name,length=length,width=width,pos_x=pos_x,pos_y=pos_y)
-        Room.objects(room_name=room_name).update(*room)
+
+    room.save()
+
     return render_template("room.html", room="active", info=room_data, form=form)
 
 @app.route("/map")
 def map():
+    x = 'Insanity'
+    print(mycol.find_one({'room_name':x}))
     return render_template("map.html", map="active")
 
 @app.route("/monsters")
