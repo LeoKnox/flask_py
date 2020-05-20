@@ -28,8 +28,8 @@ def room(room_name="Entry"):
         pos_x       =   form.pos_x.data
         pos_y       =   form.pos_y.data
         room = Room(room_name=room_name,length=length,width=width,pos_x=pos_x,pos_y=pos_y)
-
-    room.save()
+        
+        Room.objects(room_name=room_name).update(pos_y=6)
 
     return render_template("room.html", room="active", info=room_data, form=form)
 
