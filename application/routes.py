@@ -35,8 +35,10 @@ def room(room_name="Entry"):
 
 @app.route("/map")
 def map():
-    x = 'Insanity'
-    print(mycol.find_one({'room_name':x}))
+    x = 'Entry'
+    y = {'room_name':x}
+    newvalues = {"$set": {"pos_x":5,"pos_y":5}}
+    z = mycol.update_many(y,newvalues)
     return render_template("map.html", map="active")
 
 @app.route("/monsters")
