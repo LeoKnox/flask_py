@@ -3,45 +3,46 @@
 {% block content %}
 <h1>Room Page</h1>
 <p>Room Name: {{info.room_name}}</p>
-<form action="{{ url_for('room') }}" method="post" novalidate>
-<p>
-    {{form.room_name.label}}
-    {{form.room_name(value=info['room_name'])}}
-    {% for error in form.room_name.errors %}
-        <span>{{ error }}</span>
-    {% endfor %}
-</p>
-<p>
-    {{form.length.label}}
-    {{form.length(value=info['length'])}}
-    {% for error in form.length.errors %}
-        <span>{{ error }}</span>
-    {% endfor %}
-</p>
-<p>
-    {{form.width.label}}
-    {{form.width(value=info['width'])}}
-    {% for error in form.width.errors %}
-        <span>{{ error }}</span>
-    {% endfor %}
-</p>
-<p>
-    {{form.pos_x.label}}
-    {{form.pos_x(value=info['pos_x'])}}
-    {% for error in form.pos_x.errors %}
-        <span>{{ error }}</span>
-    {% endfor %}
-</p>
-<p>
-    {{form.pos_y.label}}
-    {{form.pos_y(value=info['pos_y'])}}
-    {% for error in form.pos_y.errors %}
-        <span>{{ error }}</span>
-    {% endfor %}
-</p>
-<p>
-    {{form.submit()}}
-</p>
+<form name="room" action="{{ url_for('room') }}" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{form.room_name.label}}
+        {{form.room_name(value=info['room_name'])}}
+        {% for error in form.room_name.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.length.label}}
+        {{form.length(value=info['length'])}}
+        {% for error in form.length.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.width.label}}
+        {{form.width(value=info['width'])}}
+        {% for error in form.width.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.pos_x.label}}
+        {{form.pos_x(value=info['pos_x'])}}
+        {% for error in form.pos_x.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.pos_y.label}}
+        {{form.pos_y(value=info['pos_y'])}}
+        {% for error in form.pos_y.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.submit()}}
+    </p>
 </form>
 <br>
 _

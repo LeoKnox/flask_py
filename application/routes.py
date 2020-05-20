@@ -21,6 +21,7 @@ def room(room_name="Entry"):
     room_data = Room.objects.get(room_name=room_name)
     form = CreateRoomForm()
     if form.validate_on_submit():
+        print("aaaaaa")
         room_name   =   form.room_name.data
         length      =   form.length.data
         width       =   form.width.data
@@ -28,7 +29,7 @@ def room(room_name="Entry"):
         pos_y       =   form.pos_y.data
     
         room = Room(room_name=room_name,length=length,width=width,pos_x=pos_x,pos_y=pos_y)
-        room.save()
+        Room.objects(room_name=room_name).update(*room)
     return render_template("room.html", room="active", info=room_data, form=form)
 
 @app.route("/map")
