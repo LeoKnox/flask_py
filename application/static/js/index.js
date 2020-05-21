@@ -1,3 +1,3 @@
 function myFunction() {
-    document.getElementById("pi").innerHTML = "three";
+    document.getElementById("dots").innerHTML = "three";
 }

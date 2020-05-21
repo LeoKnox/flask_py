@@ -4,10 +4,10 @@
 <h1 id="pi">Dungeon Page</h1>
 <div class="dungeon_map">
     <h3>Map</h3>
-    <div class="dots">
+    <div id="dots">
 {% for i in range(40) %}
     {% for j in range(100) %}
-    .
+    <label id="{{i}}.{{j}}">.</label>
     {% endfor %}
     <br>
 {% endfor %}
@@ -29,4 +29,7 @@
     <button onclick="myFunction()">Update</button>
     </div>
 </div>
+<script type="text/javascript">
+myFunction();
+</script>
 {% endblock %}
