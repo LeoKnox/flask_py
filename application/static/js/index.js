@@ -4,5 +4,12 @@ function myFunction() {
     y = 5;
     l = 5;
     w = 5;
-    document.getElementById(x+"."+y).innerHTML = "X"
+    for (i = l; i < l+y; i++) {
+        document.getElementById(x+"."+i).innerHTML = "X"
+        document.getElementById((x+w)+"."+i).innerHTML = "X"
+    }
+    for (j = w; j < w+x; j++) {
+        document.getElementById(j + "." + y).innerHTML = "X"
+        document.getElementById(j + "." + (y+l)).innerHTML = "X"
+    }
 }
