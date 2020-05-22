@@ -5,12 +5,15 @@
 <div class="dungeon_map">
     <h3>Map</h3>
     <div id="dots">
+<table>
 {% for i in range(40) %}
+    <tr>
     {% for j in range(100) %}
-    <label id="{{i}}.{{j}}">.</label>
+        <td id="{{i}}.{{j}}">.</td>
     {% endfor %}
-    <br>
+    </tr>
 {% endfor %}
+</table>
     </div>
 </div>
 <div class="dungeon_info">
