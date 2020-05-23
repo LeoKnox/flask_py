@@ -47,7 +47,8 @@
 <br>
 {% set doors = info.doors.split(':') %}
 {% for item in doors %}
-    <p>{{ item }}</p>
+    {% set i = item.split(',') %}
+    <p>Wall: {{ i[0] }} Position: {{ i[1] }}</p>
 {% endfor %}
 _
 {%- for x in range(info.width) -%}
