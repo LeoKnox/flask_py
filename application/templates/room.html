@@ -45,7 +45,10 @@
     </p>
 </form>
 <br>
-<p>{{ info.doors }}</p>
+{% set doors = info.doors.split(':') %}
+{% for item in doors %}
+    <p>{{ item }}</p>
+{% endfor %}
 _
 {%- for x in range(info.width) -%}
     _
