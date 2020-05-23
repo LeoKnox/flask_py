@@ -4,11 +4,11 @@ function myFunction() {
     y = 5;
     l = 5;
     w = 5;
-    for (j = w; j < w+x; j++) {
+    for (j = w; j < w+x+1; j++) {
         document.getElementById(j + "." + y).innerHTML = "X"
         document.getElementById(j + "." + (y+l)).innerHTML = "X"
     }
-    for (i = l; i < l+y; i++) {
+    for (i = l; i < l+y+1; i++) {
         document.getElementById(x+"."+i).textContent = "X"
         document.getElementById((x+w)+"."+i).innerHTML = "X"
     }
