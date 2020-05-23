@@ -21,7 +21,6 @@ def room(room_name="Entry"):
     room_data = Room.objects.get(room_name=room_name)
     form = CreateRoomForm()
     if form.validate_on_submit():
-        print("aaaaaa")
         room_name   =   form.room_name.data
         length      =   form.length.data
         width       =   form.width.data

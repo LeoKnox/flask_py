@@ -7,3 +7,4 @@ class Room(db.Document):
     width       =   db.IntField()
     pos_x       =   db.IntField()
     pos_y       =   db.IntField()
+    doors       =   db.StringField()
