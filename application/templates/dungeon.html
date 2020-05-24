@@ -22,7 +22,14 @@
     {% for item in info %}
         {% for i in item %}
             {% if item[i] and i != 'id' %}
-            <p>{{i}} : {{item[i] }}</p>
+                {% if i == "doors" %}
+                    <p>Doors</p>
+                    {% for door in item[i] %}
+                        <p>{{door}}:{{item[i][door]}}</p>
+                    {% endfor %}
+                {% else %}
+                <p>{{i}} : {{item[i] }}</p>
+                {% endif %}
             {% endif %}
         {% endfor %}
         <a class="room_edit" href="{{url_for('room')}}{{item.room_name}}">Edit</a>
