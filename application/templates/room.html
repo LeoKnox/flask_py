@@ -40,6 +40,11 @@
             <span>{{ error }}</span>
         {% endfor %}
     </p>
+    {% for door in info.doors %}
+        <p>
+            {{ door }}:{{ info.doors[door] }}
+        </p>
+    {% endfor %}
     <p>
         {{form.submit()}}
     </p>
