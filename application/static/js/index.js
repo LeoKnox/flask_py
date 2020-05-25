@@ -1,6 +1,6 @@
-function myFunction() {
+function myFunction(x) {
     document.getElementById("pi").innerHTML = "three ";
-    x = 5;
+    //x = 5;
     y = 5;
     l = 5;
     w = 5;
