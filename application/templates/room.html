@@ -45,6 +45,9 @@
             {{ door }}:{{ info.doors[door] }}
         </p>
     {% endfor %}
+    {% for select_form in form.doors %}
+        t{{select_form}}:{{ select_form.label }}
+    {% endfor %}
         {{ form.doors.label }}
     <p>
         {{form.submit()}}
