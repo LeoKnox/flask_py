@@ -36,7 +36,7 @@ def room(room_name="Entry"):
 def map():
     x = 'Entry'
     y = {'room_name':x}
-    newvalues = {"$set": {"pos_x":5,"pos_y":5,"doors":{"wall":3,"position":3}}}
+    newvalues = {"$set": {"pos_x":5,"pos_y":5,"doors":{"wall":1,"position":3}}}
     z = mycol.update_many(y,newvalues)
     return render_template("map.html", map="active")
 
