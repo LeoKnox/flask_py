@@ -1,9 +1,5 @@
-function myFunction(x) {
+function myFunction(x, y, l, w) {
     document.getElementById("pi").innerHTML = "three ";
-    //x = 5;
-    y = 5;
-    l = 5;
-    w = 5;
     wall = 1;
     position = 3;
     for (j = w-1; j < w+x+1; j++) {
